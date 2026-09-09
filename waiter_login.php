@@ -32,50 +32,64 @@ if(isset($_POST['submit'])){
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="auth-body">
-   <div class="auth-bg">
-      <div class="auth-blob b1"></div>
-      <div class="auth-blob b2"></div>
-      <div class="auth-blob b3"></div>
-   </div>
 
-   <div class="auth-wrap">
-      <div class="auth-switch">
-         <a href="admin_login.php"><i class="fas fa-shield-alt"></i> Admin</a>
-         <a href="waiter_login.php" class="is-active"><i class="fas fa-user"></i> Waiter</a>
-         <a href="cook_login.php"><i class="fas fa-fire"></i> Cook</a>
-      </div>
-
-      <div class="auth-card">
-         <div class="auth-logo"><img src="images/logo.png" alt="DineFlow"></div>
-         <div class="auth-role-pill"><i class="fas fa-user"></i> Waiter Portal</div>
-         <h1>Welcome back</h1>
-         <p class="auth-sub">Sign in to manage tables, orders and parcels</p>
-
-         <form action="" method="post">
-            <div class="auth-field">
-               <i class="fas fa-envelope field-icon"></i>
-               <input type="email" name="email" placeholder="your@email.com" required>
+   <div class="auth-shell">
+      <!-- Left brand panel -->
+      <aside class="auth-brand">
+         <div class="auth-brand-inner">
+            <div class="auth-brand-logo">
+               <img src="images/logo.png" alt="DineFlow">
             </div>
-            <div class="auth-field">
-               <i class="fas fa-lock field-icon"></i>
-               <input type="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" name="submit" class="auth-submit">
-               Login to Dashboard <i class="fas fa-arrow-right"></i>
-            </button>
-         </form>
-
-         <div class="auth-chips">
-            <div class="auth-chip"><i class="fas fa-chair"></i> Tables</div>
-            <div class="auth-chip"><i class="fas fa-box"></i> Parcels</div>
-            <div class="auth-chip"><i class="fas fa-clock"></i> Live Timers</div>
-            <div class="auth-chip"><i class="fas fa-print"></i> Bills</div>
+            <h2 class="auth-brand-title">Hospitality,<br>simplified.</h2>
+            <p class="auth-brand-text">Manage tables, parcels and live orders from one calm workspace built for service staff.</p>
+            <ul class="auth-brand-list">
+               <li><i class="fas fa-check"></i> Live table status</li>
+               <li><i class="fas fa-check"></i> Parcel tracking</li>
+               <li><i class="fas fa-check"></i> Instant bill print</li>
+               <li><i class="fas fa-check"></i> Order timers</li>
+            </ul>
          </div>
-      </div>
+         <p class="auth-brand-foot">DineFlow · Restaurant OS</p>
+      </aside>
 
-      <div class="auth-footer">
-         <p>Trouble signing in? Contact <a href="mailto:info@dineflow.app">support</a></p>
-      </div>
+      <!-- Right form panel -->
+      <main class="auth-panel">
+         <div class="auth-panel-inner">
+            <div class="auth-switch">
+               <a href="admin_login.php"><i class="fas fa-shield-alt"></i> Admin</a>
+               <a href="waiter_login.php" class="is-active"><i class="fas fa-user"></i> Waiter</a>
+               <a href="cook_login.php"><i class="fas fa-fire"></i> Cook</a>
+            </div>
+
+            <div class="auth-form-block">
+               <span class="auth-role-tag"><i class="fas fa-user"></i> Waiter Portal</span>
+               <h1>Welcome back</h1>
+               <p class="auth-sub">Sign in to manage tables, orders and parcels</p>
+
+               <form action="" method="post" class="auth-form">
+                  <div class="auth-field">
+                     <label for="email">Email</label>
+                     <div class="auth-input-wrap">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                     </div>
+                  </div>
+                  <div class="auth-field">
+                     <label for="password">Password</label>
+                     <div class="auth-input-wrap">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                     </div>
+                  </div>
+                  <button type="submit" name="submit" class="auth-submit">
+                     Login to Dashboard <i class="fas fa-arrow-right"></i>
+                  </button>
+               </form>
+
+               <p class="auth-help">Trouble signing in? Contact <a href="mailto:info@dineflow.app">support</a></p>
+            </div>
+         </div>
+      </main>
    </div>
 
 <?php if(isset($message)): ?>
