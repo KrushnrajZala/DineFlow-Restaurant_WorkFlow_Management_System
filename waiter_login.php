@@ -33,6 +33,7 @@ if(isset($_POST['submit'])){
 
 <style>
 /* Compact light login — fits one screen */
+
 body.auth-body.auth-light {
   min-height: 100vh !important;
   margin: 0 !important;
@@ -62,19 +63,30 @@ body.auth-body.auth-light {
   box-sizing: border-box !important;
 }
 
-.auth-mark { text-align: center; margin-bottom: 1.2rem; }
-.auth-symbol { width: 4rem; height: 4rem; margin: 0 auto .55rem; color: #6B8F71; }
-.auth-symbol svg { width: 100%; height: 100%; display: block; }
-.auth-name {
-  font-family: 'Source Serif 4', Georgia, serif !important;
-  font-size: 2.5rem !important; font-weight: 700 !important;
-  color: #2C3A2E !important; letter-spacing: -.02em !important;
-  margin: 0 0 .2rem !important; line-height: 1.1 !important; text-align: center;
+/* ===== LOGO CENTERING ===== */
+.auth-mark {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+.logo-wrapper {
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+.brand-mark {
+  display: block;
+  max-width: 220px;          /* change this value to make logo bigger/smaller */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 .auth-tagline {
-  font-size: 1.05rem !important; font-weight: 600 !important;
-  letter-spacing: .06em !important; text-transform: uppercase !important;
-  color: #8A9A88 !important; margin: 0 !important; text-align: center;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  color: #8A9A88 !important;
+  margin: 0 !important;
+  text-align: center;
 }
 
 .auth-heading {
@@ -154,8 +166,7 @@ body.auth-body.auth-light {
 
 @media (max-height: 720px) {
   .auth-card-light { padding: 1.8rem 2rem 1.5rem !important; }
-  .auth-symbol { width: 3.4rem; height: 3.4rem; margin-bottom: .4rem; }
-  .auth-name { font-size: 2.2rem !important; }
+  .brand-mark { max-width: 190px; }
   .auth-heading { font-size: 1.95rem !important; }
   .auth-sub { margin-bottom: 1rem !important; font-size: 1.2rem !important; }
   .auth-switch { margin-bottom: 1.1rem !important; }
@@ -165,7 +176,7 @@ body.auth-body.auth-light {
 
 @media (max-width: 480px) {
   .auth-card-light { padding: 2rem 1.5rem 1.6rem !important; border-radius: 16px !important; }
-  .auth-name { font-size: 2.2rem !important; }
+  .brand-mark { max-width: 180px; }
   .auth-heading { font-size: 2rem !important; }
   .auth-switch a { font-size: 1.1rem !important; padding: .55rem .4rem !important; }
   .auth-tagline { font-size: .98rem !important; letter-spacing: .04em !important; }
@@ -184,18 +195,11 @@ body.auth-body.auth-light {
    <div class="auth-center">
       <div class="auth-card-light">
 
+         <!-- LOGO (Centered + No food cover) -->
          <div class="auth-mark">
-            <div class="auth-symbol">
-               <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M12 40h40" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M16 40c0-12 7-22 16-22s16 10 16 22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M32 14v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  <circle cx="32" cy="12" r="2.5" fill="currentColor"/>
-  <path d="M14 40h36v3.5c0 1.5-1.2 2.5-2.5 2.5h-31c-1.3 0-2.5-1-2.5-2.5V40z" fill="currentColor" opacity="0.15"/>
-  <path d="M18 36c2-6 7-10 14-10s12 4 14 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
-</svg>
+            <div class="logo-wrapper">
+               <img src="images/logo.png" alt="DineFlow" class="brand-mark">
             </div>
-            <h1 class="auth-name">DineFlow</h1>
             <p class="auth-tagline">Restaurant Workflow Management System</p>
          </div>
 
@@ -251,4 +255,3 @@ document.addEventListener('DOMContentLoaded', function(){
 <?php endif; ?>
 </body>
 </html>
-   
